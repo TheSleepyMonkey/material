@@ -289,6 +289,7 @@ function MenuProvider($$interimElementProvider) {
           var handled;
           switch (ev.keyCode) {
             case $mdConstant.KEY_CODE.ESCAPE:
+            case $mdConstant.KEY_CODE.TAB:
               opts.mdMenuCtrl.close(false, { closeAll: true });
               handled = true;
               break;
@@ -406,7 +407,7 @@ function MenuProvider($$interimElementProvider) {
      * Attempts to focus an element. Checks whether that element is the currently
      * focused element after attempting.
      * @param {HTMLElement} el - the element to attempt focus on
-     * @returns {bool} - whether the element was successfully focused
+     * @returns {boolean} - whether the element was successfully focused
      */
     function attemptFocus(el) {
       if (el && el.getAttribute('tabindex') != -1) {
